@@ -13,7 +13,7 @@ class PubnubPlugin {
   static const EventChannel _messageChannel = const EventChannel('plugins.flutter.io/pubnub_message');
   static const EventChannel _statusChannel = const EventChannel('plugins.flutter.io/pubnub_status');
 
-  Pubnub(String publishKey, String subscribeKey, {String uuid}) {
+  pubnub(String publishKey, String subscribeKey, {String uuid}) {
     this.publishKey = publishKey;
     this.subscribeKey = subscribeKey;
     this.uuid = uuid;
