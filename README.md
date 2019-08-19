@@ -37,6 +37,13 @@ If want to be notified in your app (via onResume and onLaunch, see below) when t
       <category android:name="android.intent.category.DEFAULT" />
   </intent-filter>
   ```
+## iOS Integration 
+
+To add `firebase` into the iOS part of your app, follow these steps:
+
+Using the Firebase Console add an iOS app to your project: Follow the assistant, download the generated `GoogleService-Info.plist` file, open `ios/Runner.xcworkspace` with Xcode, and within Xcode place the file inside `ios/Runner`. 
+
+In Xcode, select Runner in the Project Navigator. In the Capabilities Tab turn on `Push Notifications` and `Background Modes`, and enable `Background fetch` and `Remote notifications` under `Background Modes`.
 
 ### Methods to use 
 
