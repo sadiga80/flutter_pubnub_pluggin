@@ -7,35 +7,18 @@ To use this plugin, add
 ```flutter_pubnub: git: url: ssh://git@github.com/AdvancedThreatAnalytics/flutter_pubnub```
 as as a dependency in your pubspec.yaml file.
 
-### Methods to use 
+This plugin uses `firebase` for recieving push notifications.
 
-Create a `pubnub` class which will be a instance of the `flutter_pubnub` pluggin. And initialize it using `Configure` method.
+## Android Integration
 
-```
-void configure() async {
-    final List<String> channels = ['channel 1', 'channel 2'];
-    final String pubKey = 'your pubnub key';
-    final String subKey = 'your subscription key';
-    final String authKey =
-        'your authorization key';
-    String fcmToken;
+To add `firebase` into the Android part of your app, follow these steps:
 
-    if (Platform.isAndroid) {
-      FirebaseMessaging fcm = FirebaseMessaging();
-      fcmToken = await fcm.getToken();
-    }
+Using the Firebase Console add an Android app to your project: Follow the assistant, download the generated google-services.json file and place it inside android/app.
 
-    fpn.configure(
-      publishKey: pubKey,
-      subscribeKey: subKey,
-      channels: channels,
-      authKey: authKey,
-      fcmToken: fcmToken,
-      onMessage: onMessageHandler,
-      onLaunch: onLaunchHandler,
-      onResume: onResumeHandler,
-    );
+Add the classpath to the [project]/android/build.gradle file.
+  
+```  dependencies {
+    // Add the google services classpath
+   classpath 'com.google.gms:google-services:4.3.0'
+    } ```
 
-    fpn.requestNotificationPermissions();
-  }
-  ```
