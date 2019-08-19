@@ -45,7 +45,7 @@ Using the Firebase Console add an iOS app to your project: Follow the assistant,
 
 In Xcode, select Runner in the Project Navigator. In the Capabilities Tab turn on `Push Notifications` and `Background Modes`, and enable `Background fetch` and `Remote notifications` under `Background Modes`.
 
-### Methods to use 
+### Method to initialize
 
 Create a `pubnub` class which will be a instance of the `flutter_pubnub` pluggin. And initialize it using `Configure` method.
 
@@ -77,4 +77,22 @@ void configure() async {
     fpn.requestNotificationPermissions();
   }
   ```
+  
+### Receiving Messages 
+
+Messages are sent to your Flutter app via the `onMessage`, `onLaunch`, and `onResume` callbacks that you configured with the plugin during setup.
+
+```
+Future<dynamic> onMessageHandler(Map<String, dynamic> message) async {
+    print('onMessageHandler: $message');
+  }
+
+  Future<dynamic> onLaunchHandler(Map<String, dynamic> message) async {
+    print('onLaunchHandler: $message');
+  }
+
+  Future<dynamic> onResumeHandler(Map<String, dynamic> message) async {
+    print('onResumeHandler: $message');
+  }
+```
 
