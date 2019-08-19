@@ -31,7 +31,8 @@ Add the apply plugin to the [project]/android/app/build.gradle file.
 
 If want to be notified in your app (via onResume and onLaunch, see below) when the user clicks on a notification in the system tray include the following intent-filter within the <activity> tag of your android/app/src/main/AndroidManifest.xml:
  
- ``` <intent-filter>
+ ``` 
+ <intent-filter>
       <action android:name="MOBILESOC_NOTIFICATION_CLICK" />
       <category android:name="android.intent.category.DEFAULT" />
   </intent-filter>
