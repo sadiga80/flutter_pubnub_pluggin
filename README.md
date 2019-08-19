@@ -9,7 +9,7 @@ as as a dependency in your pubspec.yaml file.
 
 ### Methods to use 
 
-The `Configure` method is used to initialize pubnub 
+Create a `pubnub` class which will be a instance of the `flutter_pubnub` pluggin. And initialize it using `Configure` method.
 
 ```
 void configure() async {
